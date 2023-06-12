@@ -82,22 +82,3 @@ def RSADecrypt(encrypted, privateKey):
         decryptedMessage.append(chr(pow(encrypted[i], privateKey[0],privateKey[1])))
     return ''.join(decryptedMessage)
 
-
-# def pad_pkcs1_v15(message, block_size):
-#     padding_length = block_size - 3 - len(message)
-#     padding = b'\x00\x02' + bytes([random.randint(1, 255) for _ in range(padding_length)]) + b'\x00'
-#     return padding + message
-#
-# def unpad_pkcs1_v15(padded_message):
-#     padding_start = padded_message.find(b'\x00', 2) + 1
-#     return padded_message[padding_start:]
-#
-# # Example usage
-# message = b"Hello"
-# print(type(message))
-# block_size = 256
-# padded_message = pad_pkcs1_v15(message, block_size)
-# print("Padded message:", padded_message)
-#
-# unpadded_message = unpad_pkcs1_v15(padded_message)
-# print("Unpadded message:", unpadded_message)
